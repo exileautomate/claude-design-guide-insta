@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3-Month Claude Design Mastery Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --card: #16161f;
+    --border: #2a2a3a;
+    --accent: #7c6aff;
+    --accent2: #ff6a9e;
+    --accent3: #6affd4;
+    --text: #e8e8f0;
+    --muted: #8888a8;
+    --month1: #7c6aff;
+    --month2: #ff6a9e;
+    --month3: #6affd4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 24px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 30%, rgba(124,106,255,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 70%, rgba(255,106,158,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 50% 50%, rgba(106,255,212,0.06) 0%, transparent 70%);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(124,106,255,0.12);
+    border: 1px solid rgba(124,106,255,0.3);
+    color: #a99dff;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 900;
+    line-height: 1.0;
+    position: relative;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 .line1 { display: block; color: var(--text); }
+  .hero h1 .line2 {
+    display: block;
+    background: linear-gradient(135deg, #7c6aff, #ff6a9e, #6affd4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 560px;
+    margin: 20px auto 40px;
+    font-weight: 300;
+    position: relative;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .meta-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #7c6aff, #ff6a9e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .meta-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  /* WHAT IS SECTION */
+  .what-is {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 64px 24px;
+  }
+
+  .what-is-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .what-is h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .what-is p {
+    color: var(--muted);
+    margin-bottom: 16px;
+    line-height: 1.8;
+  }
+
+  .feature-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .pill {
+    background: rgba(124,106,255,0.08);
+    border: 1px solid rgba(124,106,255,0.2);
+    color: #a99dff;
+    padding: 5px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .access-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+  }
+
+  .access-card h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .access-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+
+  .access-item:last-child { border-bottom: none; }
+
+  .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dot-green { background: var(--accent3); }
+  .dot-purple { background: var(--accent); }
+  .dot-pink { background: var(--accent2); }
+
+  .url-tag {
+    display: inline-block;
+    background: rgba(106,255,212,0.08);
+    border: 1px solid rgba(106,255,212,0.2);
+    color: var(--accent3);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    margin-top: 16px;
+  }
+
+  /* MAIN CONTENT */
+  .main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+
+  /* MONTH HEADER */
+  .month-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 80px 0 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .month-header:first-child { margin-top: 0; }
+
+  .month-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1;
+    opacity: 0.12;
+    flex-shrink: 0;
+  }
+
+  .month1 .month-num { color: var(--month1); }
+  .month2 .month-num { color: var(--month2); }
+  .month3 .month-num { color: var(--month3); }
+
+  .month-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .month1 .month-info h2 { color: var(--month1); }
+  .month2 .month-info h2 { color: var(--month2); }
+  .month3 .month-info h2 { color: var(--month3); }
+
+  .month-info p { color: var(--muted); font-size: 14px; }
+
+  .month-goal {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 48px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  .month-goal strong { color: var(--text); }
+
+  /* WEEK */
+  .week {
+    margin-bottom: 56px;
+  }
+
+  .week-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .week-badge {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .month1 .week-badge { background: rgba(124,106,255,0.12); color: var(--month1); border: 1px solid rgba(124,106,255,0.25); }
+  .month2 .week-badge { background: rgba(255,106,158,0.12); color: var(--month2); border: 1px solid rgba(255,106,158,0.25); }
+  .month3 .week-badge { background: rgba(106,255,212,0.12); color: var(--month3); border: 1px solid rgba(106,255,212,0.25); }
+
+  .week-title-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .week-title-block p {
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  /* CONCEPT BOX */
+  .concept {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+
+  .concept-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .month1 .concept-label { color: var(--month1); }
+  .month2 .concept-label { color: var(--month2); }
+  .month3 .concept-label { color: var(--month3); }
+
+  .concept p { color: var(--muted); }
+  .concept strong { color: var(--text); }
+
+  /* TASKS */
+  .tasks-grid {
+    display: grid;
+    gap: 16px;
+  }
+
+  .task {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .task::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+  }
+
+  .month1 .task::before { background: var(--month1); }
+  .month2 .task::before { background: var(--month2); }
+  .month3 .task::before { background: var(--month3); }
+
+  .task-num {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  .month1 .task-num { color: var(--month1); }
+  .month2 .task-num { color: var(--month2); }
+  .month3 .task-num { color: var(--month3); }
+
+  .task h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+
+  .task p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+
+  .task p:last-child { margin-bottom: 0; }
+
+  /* PROMPT BLOCKS */
+  .prompt-block {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 12px 0;
+  }
+
+  .prompt-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent3);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .prompt {
+    font-family: 'DM Mono', monospace;
+    font-size: 12.5px;
+    color: #c8f7e8;
+    line-height: 1.7;
+  }
+
+  .prompt-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .prompt-list li {
+    font-family: 'DM Mono', monospace;
+    font-size: 12.5px;
+    color: #c8f7e8;
+    line-height: 1.7;
+    padding: 3px 0;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .prompt-list li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent3);
+  }
+
+  /* TIP BLOCK */
+  .tip {
+    background: rgba(106,255,212,0.04);
+    border: 1px solid rgba(106,255,212,0.12);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .tip-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent3);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  /* WARNING BLOCK */
+  .warning {
+    background: rgba(255,106,158,0.04);
+    border: 1px solid rgba(255,106,158,0.15);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .warning-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent2);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  /* OUTCOME BOX */
+  .outcome {
+    background: rgba(124,106,255,0.04);
+    border: 1px solid rgba(124,106,255,0.15);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .outcome-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  /* CHECKLIST */
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 5px 0;
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .check-icon {
+    width: 18px; height: 18px;
+    border-radius: 4px;
+    border: 1.5px solid var(--border);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* WEEK DIVIDER */
+  .week-divider {
+    height: 1px;
+    background: linear-gradient(to right, var(--border), transparent);
+    margin: 48px 0;
+  }
+
+  /* EXPORT SECTION */
+  .export-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 12px 0;
+  }
+
+  .export-item {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  .export-item strong {
+    display: block;
+    color: var(--text);
+    font-size: 13px;
+    margin-bottom: 3px;
+  }
+
+  /* MONTH RECAP */
+  .month-recap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin: 48px 0 80px;
+  }
+
+  .month-recap h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .month1 .month-recap h3 { color: var(--month1); }
+  .month2 .month-recap h3 { color: var(--month2); }
+  .month3 .month-recap h3 { color: var(--month3); }
+
+  .deliverables {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .deliverable {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    color: var(--muted);
+    padding: 8px 12px;
+    background: var(--card);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+
+  .del-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* FINALE */
+  .finale {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 80px 24px;
+    text-align: center;
+  }
+
+  .finale h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 900;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #7c6aff, #ff6a9e, #6affd4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .finale p {
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .finale-stats {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .finale-stat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 28px;
+    min-width: 140px;
+  }
+
+  .finale-stat .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #7c6aff, #ff6a9e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .finale-stat .lbl {
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+  }
+
+  .cta-url {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(124,106,255,0.15), rgba(255,106,158,0.1));
+    border: 1px solid rgba(124,106,255,0.3);
+    color: var(--text);
+    padding: 16px 40px;
+    border-radius: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  @media (max-width: 640px) {
+    .what-is-inner { grid-template-columns: 1fr; }
+    .deliverables { grid-template-columns: 1fr; }
+    .export-grid { grid-template-columns: 1fr 1fr; }
+    .hero-meta { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🎨 Complete Mastery Guide · April 2026</div>
+  <h1>
+    <span class="line1">Master Claude</span>
+    <span class="line2">Design</span>
+  </h1>
+  <p class="hero-sub">A task-by-task, prompt-by-prompt 3-month guide to mastering Anthropic's brand new visual design tool — built from official documentation.</p>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <span class="meta-num">3</span>
+      <span class="meta-label">Months</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-num">12</span>
+      <span class="meta-label">Weeks</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-num">48+</span>
+      <span class="meta-label">Hands-on Tasks</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-num">100+</span>
+      <span class="meta-label">Prompts to Try</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS -->
+<section class="what-is">
+  <div class="what-is-inner">
+    <div>
+      <h2>What is Claude Design?</h2>
+      <p>Launched on <strong>April 17, 2026</strong>, Claude Design is a new Anthropic Labs product powered by Claude Opus 4.7. It lets you describe what you want to build, and Claude generates a working visual design on a live canvas — no design background required.</p>
+      <p>It's built for founders, marketers, product managers, and designers who need to go from idea to something visual fast. Think of it as having a senior designer available 24/7, who can also hand work off directly to engineering.</p>
+      <div class="feature-pills">
+        <span class="pill">Designs & Prototypes</span>
+        <span class="pill">Slide Decks</span>
+        <span class="pill">One-Pagers</span>
+        <span class="pill">Canva Export</span>
+        <span class="pill">Claude Code Handoff</span>
+        <span class="pill">Design Systems</span>
+      </div>
+      <div class="url-tag">claude.ai/design</div>
+    </div>
+    <div class="access-card">
+      <h3>Who can access it?</h3>
+      <div class="access-item"><span class="dot dot-green"></span>Pro Plan — Available (Research Preview)</div>
+      <div class="access-item"><span class="dot dot-green"></span>Max Plan — Available (Research Preview)</div>
+      <div class="access-item"><span class="dot dot-green"></span>Team Plan — Available (Research Preview)</div>
+      <div class="access-item"><span class="dot dot-green"></span>Enterprise Plan — Available (Default Off)</div>
+      <div class="access-item"><span class="dot dot-purple"></span>Powered by Claude Opus 4.7</div>
+      <div class="access-item"><span class="dot dot-pink"></span>Canva Design Engine Integration</div>
+      <div class="access-item"><span class="dot dot-green"></span>Export: PDF, PPTX, HTML, ZIP, Canva</div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+  <!-- ══════════════ MONTH 1 ══════════════ -->
+  <div class="month1">
+    <div class="month-header">
+      <span class="month-num">01</span>
+      <div class="month-info">
+        <h2>Month 1 — Foundation & First Designs</h2>
+        <p>Weeks 1 through 4 · Learn the tool, master prompting, and build your first complete projects</p>
+      </div>
+    </div>
+
+    <div class="month-goal">
+      <strong>Monthly Goal:</strong> By the end of Month 1, you should be able to open Claude Design, describe any project from scratch, iterate confidently on the output using both chat and inline comments, and export a finished design in the format you need. You'll also build the foundations — a context file and a prompt library — that will make everything faster in months 2 and 3.
+    </div>
+
+    <!-- WEEK 1 -->
+    <div class="week">
+      <div class="week-header">
+        <div class="week-badge">W1</div>
+        <div class="week-title-block">
+          <h3>Understanding the Interface & Your First Design</h3>
+          <p>Get familiar with the tool, understand how it thinks, and build your first real design</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-label">How the Tool Works</div>
+        <p>Claude Design has <strong>two areas</strong>: a <strong>chat interface on the left</strong> where you describe what you want, and a <strong>live canvas on the right</strong> where Claude builds it in real time. The flow is: describe → review on canvas → iterate until it's right → export. Your first few sessions should be about exploring this loop, not producing perfect output.</p>
+      </div>
+
+      <div class="tasks-grid">
+
+        <div class="task">
+          <div class="task-num">Task 01 — Day 1</div>
+          <h4>Open Claude Design & Take the Tour</h4>
+          <p>Go to <strong>claude.ai/design</strong> and create a new project. Don't design anything yet. Spend 15 minutes clicking around. Understand where the chat lives, what the canvas looks like when empty, and where the Export button is. Read the button labels. This orientation will save you confusion later.</p>
+          <div class="tip">
+            <div class="tip-label">💡 Tip</div>
+            Before you prompt anything, notice the chat panel on the left and the canvas on the right. Every design you build will live on that canvas.
+          </div>
+          <div class="outcome">
+            <div class="outcome-label">✓ Done When</div>
+            You can describe where each main feature lives without looking.
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 02 — Day 1</div>
+          <h4>Build Your First Design in Under 5 Minutes</h4>
+          <p>Use the exact prompt below for your very first design. Don't overthink it. Type it, hit send, and watch Claude work on the canvas. The goal here is just to see the tool in action for the first time.</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Starter Prompt</div>
+            <div class="prompt">"Create a landing page for a personal brand. Include a hero section with a headline and sub-headline, a short about section, three skills or services displayed as cards, and a contact form at the bottom."</div>
+          </div>
+          <div class="outcome">
+            <div class="outcome-label">✓ Done When</div>
+            You see a complete multi-section layout rendered on the canvas.
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 03 — Day 2</div>
+          <h4>Learn the 4-Part Prompt Formula</h4>
+          <p>Every great Claude Design prompt has four parts: <strong>Goal</strong> (what are you building?), <strong>Layout</strong> (how should things be arranged?), <strong>Content</strong> (what information goes in it?), and <strong>Audience</strong> (who is this for?). Write 5 prompts using this formula — one for each type of output below — and run all 5.</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 5 Prompts to Write & Run</div>
+            <ul class="prompt-list">
+              <li>A dashboard for a SaaS analytics product</li>
+              <li>A mobile onboarding flow (4 screens)</li>
+              <li>A product landing page with pricing section</li>
+              <li>An internal tool for reviewing team submissions</li>
+              <li>A one-pager for a new service launch</li>
+            </ul>
+          </div>
+          <div class="outcome">
+            <div class="outcome-label">✓ Done When</div>
+            All 5 prompts have been run and you've reviewed the output of each.
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 04 — Day 3</div>
+          <h4>Run the Official Starter Prompts from the Docs</h4>
+          <p>Anthropic published these exact prompts in the official Claude Design documentation. Run all of them this week — they're designed to show you the full range of what the tool can do.</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Official Doc Prompts</div>
+            <ul class="prompt-list">
+              <li>"Create a dashboard showing monthly revenue with filters for region and product line."</li>
+              <li>"Design a mobile app onboarding flow with 4 screens that walks users through our core features."</li>
+              <li>"Build a landing page for our new API product with a hero section, code examples, and pricing."</li>
+              <li>"Create a form for collecting customer feedback with conditional questions based on category."</li>
+              <li>"Design an internal tool for our ops team to review and approve content submissions."</li>
+            </ul>
+          </div>
+          <div class="outcome">
+            <div class="outcome-label">✓ Done When</div>
+            All 5 official prompts have been run. Note which output surprised you most.
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 05 — Day 4–5</div>
+          <h4>Start Your Prompt Score Journal</h4>
+          <p>Create a simple Google Doc or Notion page called "Prompt Journal." After every design session this week, add your best and worst prompt, the output quality (1–10), and one note on what made it strong or weak. This will become your most valuable asset over 3 months.</p>
+          <p>Rate each output on: clarity of layout, accuracy to your prompt, visual quality, and usefulness of the first draft. Track what types of prompts produce the highest quality on the first attempt.</p>
+          <div class="outcome">
+            <div class="outcome-label">✓ Done When</div>
+            At least 10 prompts logged with ratings and notes.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="week-divider"></div>
+
+    <!-- WEEK 2 -->
+    <div class="week">
+      <div class="week-header">
+        <div class="week-badge">W2</div>
+        <div class="week-title-block">
+          <h3>Mastering Iteration — Chat vs. Inline Comments</h3>
+          <p>The first draft is never the final. Learn how to refine designs precisely and efficiently</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-label">Core Concept</div>
+        <p>Claude Design gives you <strong>two ways to iterate</strong>. <strong>Chat</strong> is for broad structural changes — redesigning a section, shifting the aesthetic, adding new parts. <strong>Inline comments</strong> are for clicking directly on a specific element on the canvas and requesting a targeted change. Knowing which to use and when is the skill that separates fast users from slow ones.</p>
+      </div>
+
+      <div class="tasks-grid">
+
+        <div class="task">
+          <div class="task-num">Task 06</div>
+          <h4>Practice 10 Chat-Level Changes</h4>
+          <p>Take the landing page from Week 1 and use the chat to make the following changes one at a time. After each change, look at what updated on the canvas before sending the next message.</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Chat Prompts to Run (in order)</div>
+            <ul class="prompt-list">
+              <li>"Make the color scheme darker and more minimal."</li>
+              <li>"Rearrange so the about section comes before the services."</li>
+              <li>"Change the layout from single column to two columns for the services section."</li>
+              <li>"Add a testimonials section between services and contact."</li>
+              <li>"Make the hero section take up the full viewport height."</li>
+              <li>"Show me 2 alternative color palettes for this page."</li>
+              <li>"Change the font style to something more editorial and refined."</li>
+              <li>"Add a sticky navigation bar at the top."</li>
+              <li>"Make the contact form more prominent — full-width with a background color."</li>
+              <li>"Remove the skills cards section entirely and replace it with a bullet list of services."</li>
+            </ul>
+          </div>
+          <div class="outcome">
+            <div class="outcome-label">✓ Done When</div>
+            All 10 changes applied. You can see the design evolve meaningfully with each message.
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 07</div>
+          <h4>Practice 10 Inline Comment Edits</h4>
+          <p>Click directly on elements on the canvas and leave inline comments for these specific, component-level changes. Inline comments are for precision — use them when you know exactly what to fix and where it is.</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Inline Comment Examples</div>
+            <ul class="prompt-list">
+              <li>Click a button → "Increase the padding on this button."</li>
+              <li>Click a heading → "Make this heading larger and bolder."</li>
+              <li>Click a form field → "Change this to a dropdown instead of a text input."</li>
+              <li>Click a card → "Add a subtle border and shadow to this card."</li>
+              <li>Click an icon → "Replace this with a more minimal icon."</li>
+              <li>Click the nav → "Make this navigation background transparent."</li>
+              <li>Click a section → "Add more padding above and below this section."</li>
+              <li>Click body text → "Change this text to a lighter gray — it's too dark."</li>
+              <li>Click a CTA → "Use the primary brand color for this button."</li>
+              <li>Click the footer → "Make this footer simpler — just copyright and links."</li>
+            </ul>
+          </div>
+          <div class="warning">
+            <div class="warning-label">⚠ Known Issue</div>
+            Inline comments sometimes disappear before Claude reads them. If this happens, paste the comment directly into the chat instead. This is the official Anthropic workaround.
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 08</div>
+          <h4>Build the Chat vs. Comments Cheat Sheet</h4>
+          <p>Based on your experience in Tasks 06 and 07, create a personal one-page reference that lists: when you use chat, when you use inline comments, and 5 of your most effective prompt patterns for each. This becomes a go-to reference for all future sessions.</p>
+          <div class="tip">
+            <div class="tip-label">💡 Rule of Thumb</div>
+            If the change requires context, explanation, or affects more than one element → use chat. If you can point at it and describe it in one sentence → use inline comments.
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 09</div>
+          <h4>The Full Iteration Challenge</h4>
+          <p>Build a design from scratch, then do 20 iterations on it — alternating between chat and inline comments. Goal: transform a rough first draft into something you'd be genuinely proud to show someone. Track how many iterations it takes before you feel the output is "good enough." Most people are surprised by how much iterations improve quality.</p>
+          <div class="outcome">
+            <div class="outcome-label">✓ Done When</div>
+            You have a before/after screenshot of the same design, significantly improved through iteration.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="week-divider"></div>
+
+    <!-- WEEK 3 -->
+    <div class="week">
+      <div class="week-header">
+        <div class="week-badge">W3</div>
+        <div class="week-title-block">
+          <h3>Adding Context, References & Brand Inputs</h3>
+          <p>Learn to feed Claude visual references, brand assets, and existing designs to dramatically improve output quality</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-label">Core Concept</div>
+        <p>Context is everything in Claude Design. You can attach <strong>screenshots of existing designs</strong>, <strong>competitor products</strong>, <strong>wireframes</strong>, <strong>slide decks</strong>, and even <strong>code repositories</strong> to a project. Claude reads all of it and uses it to produce more relevant, on-brand, production-ready output from the very first draft.</p>
+      </div>
+
+      <div class="tasks-grid">
+
+        <div class="task">
+          <div class="task-num">Task 10</div>
+          <h4>The "Make It Look Like This" Challenge</h4>
+          <p>Find 3 websites or apps whose design you admire. Take a screenshot of their hero section or main page. Upload each screenshot into a new Claude Design project and use this prompt structure:</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Reference Prompt Template</div>
+            <div class="prompt">"Here's a screenshot of a design style I want to reference. Create a [type of page] for [your brand/project] in a similar visual direction — same level of refinement, similar use of whitespace, similar typographic hierarchy. But make the content completely original."</div>
+          </div>
+          <p>Do this 3 times with 3 different references. Notice how dramatically the visual quality improves when Claude has something to work from.</p>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 11</div>
+          <h4>Build Your Personal Brand Context File</h4>
+          <p>This is one of the most important tasks in Month 1. Create a document (plain text is fine) that contains your complete brand context. You will paste this at the start of every Claude Design project going forward. Include all of the following:</p>
+          <ul class="checklist">
+            <li><span class="check-icon"></span>Brand name and one-sentence description</li>
+            <li><span class="check-icon"></span>Primary color (hex code), secondary color, accent color</li>
+            <li><span class="check-icon"></span>Primary font, secondary font (if applicable)</li>
+            <li><span class="check-icon"></span>Tone of voice (e.g., "Professional but warm, never formal")</li>
+            <li><span class="check-icon"></span>Target audience (age, profession, pain points)</li>
+            <li><span class="check-icon"></span>What the brand should never look like</li>
+            <li><span class="check-icon"></span>3 brands whose aesthetic you admire and want to reference</li>
+            <li><span class="check-icon"></span>Any specific components you always use (e.g., rounded cards, flat buttons)</li>
+          </ul>
+          <div class="tip">
+            <div class="tip-label">💡 How to Use It</div>
+            Start every new Claude Design session with: "Here is my brand context: [paste file]. Keep all of this in mind throughout our session."
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 12</div>
+          <h4>The 3-Brand Inspiration Challenge</h4>
+          <p>Pick 3 brands you love. Screenshot their hero sections. Create a new fictional brand and have Claude generate a hero section inspired by each of the 3 references — separately, in 3 different projects. Compare the outputs. This shows you how much reference material shapes the output and trains you to give better visual direction.</p>
+          <div class="outcome">
+            <div class="outcome-label">✓ Done When</div>
+            You have 3 dramatically different hero sections for the same fictional brand, each influenced by a different reference.
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 13</div>
+          <h4>Upload an Existing Slide Deck or Document</h4>
+          <p>Find an existing presentation, report, or document you've created. Upload it into a Claude Design project and use this prompt:</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Style Replication Prompt</div>
+            <div class="prompt">"I've uploaded an existing document. Analyze its visual style — the fonts, colors, spacing, and layout approach. Now create a new [landing page / one-pager / presentation] that follows the same visual language but for a new topic: [describe topic]."</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="week-divider"></div>
+
+    <!-- WEEK 4 -->
+    <div class="week">
+      <div class="week-header">
+        <div class="week-badge">W4</div>
+        <div class="week-title-block">
+          <h3>Version Control, Exporting & Your First Full Project</h3>
+          <p>Learn to save progress, explore multiple directions, and deliver a polished complete project end-to-end</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-label">Core Concept</div>
+        <p>Claude Design lets you save your work and explore different directions without losing your progress. When you're happy with a design, you can export it in 6 different formats: <strong>ZIP, PDF, PPTX, Canva, standalone HTML,</strong> and <strong>Claude Code handoff</strong>. You'll practice each one this week.</p>
+      </div>
+
+      <div class="tasks-grid">
+
+        <div class="task">
+          <div class="task-num">Task 14</div>
+          <h4>Practice Version Saving</h4>
+          <p>Build a design, then use this exact phrase to save your progress before trying a different direction:</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Version Save Prompt</div>
+            <div class="prompt">"Save what we have and try a completely different approach — this time go with a darker, more editorial aesthetic."</div>
+          </div>
+          <p>Repeat this 3 times in the same project so you have 3 different saved versions. Practice navigating back to earlier versions in the conversation. This is your undo button.</p>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 15</div>
+          <h4>Export in Every Format</h4>
+          <p>Take any completed design and export it using all 6 available formats. Understand what each one is for so you always know which to use in a real project.</p>
+          <div class="export-grid">
+            <div class="export-item"><strong>ZIP</strong>All project files bundled</div>
+            <div class="export-item"><strong>PDF</strong>Stakeholder sharing, print</div>
+            <div class="export-item"><strong>PPTX</strong>Editable in PowerPoint</div>
+            <div class="export-item"><strong>Canva</strong>Polish & collaborate</div>
+            <div class="export-item"><strong>HTML</strong>Deploy as web page</div>
+            <div class="export-item"><strong>Code Handoff</strong>Send to Claude Code</div>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 16</div>
+          <h4>Ask Claude to Review Its Own Design</h4>
+          <p>After generating any design, ask Claude to critique it. This is one of the most underused features — Claude can act as a design reviewer, not just a generator.</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Design Review Prompts</div>
+            <ul class="prompt-list">
+              <li>"Review this design for accessibility issues. Check contrast ratios and text size."</li>
+              <li>"Review the information hierarchy. Is it clear what the user should look at first?"</li>
+              <li>"What are the 3 biggest visual problems with this design? Be direct."</li>
+              <li>"What would a senior designer change about this layout?"</li>
+              <li>"Is this design appropriate for the target audience? What would you adjust?"</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 17 — CAPSTONE</div>
+          <h4>Month 1 Capstone: Build a Complete Project End-to-End</h4>
+          <p>This is your Month 1 final project. Choose a real project — a landing page for something you're working on, a pitch deck for an idea, or a personal portfolio page. Build it completely using everything you've learned this month: the 4-part prompt formula, your brand context file, chat + inline comment iteration, version saving, and final export.</p>
+          <ul class="checklist">
+            <li><span class="check-icon"></span>Start with your brand context file pasted in</li>
+            <li><span class="check-icon"></span>Use the 4-part prompt formula for the first draft</li>
+            <li><span class="check-icon"></span>Do at least 15 iterations (mix of chat and comments)</li>
+            <li><span class="check-icon"></span>Save 2 version branches and compare them</li>
+            <li><span class="check-icon"></span>Ask Claude for a design review and fix the issues it finds</li>
+            <li><span class="check-icon"></span>Export in at least 2 formats</li>
+            <li><span class="check-icon"></span>Share with at least one person for feedback</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="month-recap">
+      <h3>Month 1 — What You'll Have Built</h3>
+      <p style="color: var(--muted); font-size: 14px; margin-bottom: 16px;">By the end of Week 4, these are your concrete deliverables:</p>
+      <div class="deliverables">
+        <div class="deliverable"><span class="del-dot" style="background:var(--month1)"></span>Personal Brand Context File</div>
+        <div class="deliverable"><span class="del-dot" style="background:var(--month1)"></span>Prompt Score Journal (10+ entries)</div>
+        <div class="deliverable"><span class="del-dot" style="background:var(--month1)"></span>Chat vs. Comments Cheat Sheet</div>
+        <div class="deliverable"><span class="del-dot" style="background:var(--month1)"></span>5+ completed design drafts</div>
+        <div class="deliverable"><span class="del-dot" style="background:var(--month1)"></span>3-brand inspiration comparison</div>
+        <div class="deliverable"><span class="del-dot" style="background:var(--month1)"></span>1 complete capstone project</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════ MONTH 2 ══════════════ -->
+  <div class="month2">
+    <div class="month-header">
+      <span class="month-num">02</span>
+      <div class="month-info">
+        <h2>Month 2 — Real Work & Advanced Workflows</h2>
+        <p>Weeks 5 through 8 · Apply Claude Design to real project types, build faster, and integrate into real workflows</p>
+      </div>
+    </div>
+
+    <div class="month-goal">
+      <strong>Monthly Goal:</strong> By the end of Month 2, you should be applying Claude Design to real professional use cases — pitch decks, prototypes, social media, client work — with confidence and speed. You'll understand how the design system integration works and have a repeatable workflow for your most common project types.
+    </div>
+
+    <!-- WEEK 5 -->
+    <div class="week">
+      <div class="week-header">
+        <div class="week-badge">W5</div>
+        <div class="week-title-block">
+          <h3>Presentations & Pitch Decks</h3>
+          <p>Build professional slide decks in under 20 minutes — the highest-ROI skill in Claude Design</p>
+        </div>
+      </div>
+
+      <div class="tasks-grid">
+
+        <div class="task">
+          <div class="task-num">Task 18</div>
+          <h4>Build a Full 10-Slide Pitch Deck</h4>
+          <p>Create a complete pitch deck for a real or fictional business. Use this structured prompt that tells Claude exactly what slides to include:</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Pitch Deck Master Prompt</div>
+            <div class="prompt">"Design a 10-slide pitch deck for [business name]. The slides should be: 1) Cover slide with logo and tagline, 2) Problem — what pain point do we solve, 3) Solution — how we solve it, 4) How it works — product overview in 3 steps, 5) Market size — TAM/SAM/SOM, 6) Traction — key metrics and milestones, 7) Business model — how we make money, 8) Team — founders and key roles, 9) Roadmap — next 12 months, 10) Ask — funding amount and use of funds. Make it clean, investor-ready, and modern. Use a dark color scheme with bold typography."</div>
+          </div>
+          <div class="outcome">
+            <div class="outcome-label">✓ Done When</div>
+            A complete 10-slide deck is generated. Then do at least 8 iterations to polish it.
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 19</div>
+          <h4>The Alternative Styles Challenge</h4>
+          <p>After generating your pitch deck, ask for completely different visual styles to compare:</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Style Variation Prompts</div>
+            <ul class="prompt-list">
+              <li>"Show me a minimal, white-background version of this deck — Apple-style."</li>
+              <li>"Now give me a bold, dark, high-contrast version with large typography."</li>
+              <li>"Try a warm, earthy palette — beige, tan, and deep green."</li>
+            </ul>
+          </div>
+          <p>Compare all 3 side-by-side. Notice how the same content reads completely differently with different visual styles. Choose the one that best fits the brand personality.</p>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 20</div>
+          <h4>The Full Canva Handoff Workflow</h4>
+          <p>Practice the complete flow from Claude Design to Canva to published presentation. This is the workflow you'll use with clients.</p>
+          <ul class="checklist">
+            <li><span class="check-icon"></span>Finish your pitch deck in Claude Design</li>
+            <li><span class="check-icon"></span>Click Export → Send to Canva</li>
+            <li><span class="check-icon"></span>Open in Canva — verify all slides transferred correctly</li>
+            <li><span class="check-icon"></span>Make final text edits and polish directly in Canva</li>
+            <li><span class="check-icon"></span>Add real company logo and images in Canva</li>
+            <li><span class="check-icon"></span>Export as PDF or share a Canva link</li>
+          </ul>
+          <div class="tip">
+            <div class="tip-label">💡 Workflow Note</div>
+            Claude Design is for the initial build and structural iteration. Canva is for final polish, real images, and publishing. They work as a two-step pipeline.
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 21</div>
+          <h4>Speed Goal: A Full Deck in Under 20 Minutes</h4>
+          <p>Set a timer. Start from a blank project. Use your brand context file and your best prompt structure from Task 18. Build and iterate a complete presentation deck. Stop at 20 minutes. Evaluate what you produced. Repeat until you consistently hit the 20-minute target. This builds real-world speed.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="week-divider"></div>
+
+    <!-- WEEK 6 -->
+    <div class="week">
+      <div class="week-header">
+        <div class="week-badge">W6</div>
+        <div class="week-title-block">
+          <h3>Prototypes & Interactive Designs</h3>
+          <p>Build interactive product prototypes that can be handed off directly to engineering</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-label">Why This Matters</div>
+        <p>Claude Design's interactive prototype capability is one of its most powerful features. Complex pages that took <strong>20+ prompts in other tools only require 2 prompts in Claude Design</strong>. And when you're done, the Claude Code handoff packages everything your engineering team needs — no design spec documents required.</p>
+      </div>
+
+      <div class="tasks-grid">
+
+        <div class="task">
+          <div class="task-num">Task 22</div>
+          <h4>Build a Mobile App Onboarding Prototype</h4>
+          <p>Create an interactive mobile prototype with multiple screens and button states:</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Prototype Prompt</div>
+            <div class="prompt">"Design a mobile app onboarding flow with 4 screens. Screen 1: Welcome screen with app name, tagline, and 'Get Started' button. Screen 2: Account creation form with name, email, and password fields. Screen 3: Feature highlights — 3 cards showing the main value props with icons. Screen 4: Permission requests — location and notifications with Accept/Skip options. Make it interactive — the buttons should navigate between screens. Use a clean, modern mobile UI style."</div>
+          </div>
+          <p>After the prototype is generated, test clicking through the screens. Then iterate: change the visual style, add a loading screen, or adjust the copy.</p>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 23</div>
+          <h4>Build a Form with Conditional Logic</h4>
+          <p>This tests Claude Design's ability to handle interactive UI logic:</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Conditional Form Prompt</div>
+            <div class="prompt">"Design a customer feedback form. The first question is: 'What is the nature of your feedback?' with options: Compliment, Issue, Feature Request, General. If the user selects 'Issue', show a follow-up field: 'Describe the issue and when it occurred.' If they select 'Feature Request', show: 'What would this feature help you accomplish?' The other options just show a general text field. Include a star rating for overall experience and a submit button."</div>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 24</div>
+          <h4>Practice the Claude Code Handoff</h4>
+          <p>Take a completed prototype and practice the complete handoff to Claude Code. This is how design becomes production-ready code:</p>
+          <ul class="checklist">
+            <li><span class="check-icon"></span>Complete any interactive design in Claude Design</li>
+            <li><span class="check-icon"></span>Click Export → Handoff to Claude Code</li>
+            <li><span class="check-icon"></span>Choose "Send to Claude Code Web" (no setup required)</li>
+            <li><span class="check-icon"></span>Review the handoff package — note what Claude includes</li>
+            <li><span class="check-icon"></span>If you have Claude Code installed, pass it with the prompt: "Build this exactly as designed"</li>
+          </ul>
+          <div class="tip">
+            <div class="tip-label">💡 Pro Note</div>
+            Claude packages design intent alongside the files — not just assets. This means the engineering handoff includes reasoning about spacing, interaction states, and component hierarchy.
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 25</div>
+          <h4>Get Real User Feedback on a Prototype</h4>
+          <p>Share one of your interactive prototypes with someone who has never seen it. Use the organization sharing feature (view-only link). Watch them interact with it. Note: what do they click first? Where do they get confused? What do they say? Take their feedback and run at least 5 more iterations to address what you learn. This is real UX research.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="week-divider"></div>
+
+    <!-- WEEK 7 -->
+    <div class="week">
+      <div class="week-header">
+        <div class="week-badge">W7</div>
+        <div class="week-title-block">
+          <h3>Social Media, One-Pagers & Content Design</h3>
+          <p>Create consistent, on-brand content across formats at 10x the normal speed</p>
+        </div>
+      </div>
+
+      <div class="tasks-grid">
+
+        <div class="task">
+          <div class="task-num">Task 26</div>
+          <h4>Build a 5-Slide Instagram Carousel</h4>
+          <p>Design a complete, publish-ready Instagram carousel:</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Carousel Prompt</div>
+            <div class="prompt">"Create a 5-slide Instagram carousel (1:1 square format) about [your topic]. Slide 1: Hook — a bold statement or question to stop the scroll. Slide 2: Problem — what pain point this addresses. Slide 3: Key insight #1 with a supporting visual or icon. Slide 4: Key insight #2 with a supporting visual or icon. Slide 5: CTA — what to do next, with your handle and a save/share prompt. Use a consistent color palette and typography across all 5 slides. Make it visually striking — the kind of post people save."</div>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 27</div>
+          <h4>Build a Complete One-Pager</h4>
+          <p>A one-pager is one of the most common business design deliverables. Build one for a product, service, event, or job opening:</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 One-Pager Prompt</div>
+            <div class="prompt">"Design a one-pager for [product/service/event]. It should include: a headline and sub-headline, a clear value proposition, 3 key benefits with icons, social proof (a testimonial quote or a trust stat), pricing or key details, and a clear call to action. Format it to fit on a single A4 page. Make it suitable for PDF distribution — professional, clean, and easy to skim in 30 seconds."</div>
+          </div>
+          <p>Export as PDF and share with someone. Get their reaction in under 30 seconds — if they can't grasp the value prop by then, iterate until they can.</p>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 28</div>
+          <h4>Build a 3-Format Social Media Template Set</h4>
+          <p>Create a visual identity set for social media — 3 different formats that look like they belong to the same brand:</p>
+          <ul class="checklist">
+            <li><span class="check-icon"></span>Square post (1080×1080) — for feed posts</li>
+            <li><span class="check-icon"></span>Story (1080×1920) — vertical for Instagram/TikTok stories</li>
+            <li><span class="check-icon"></span>Banner (1200×628) — for LinkedIn or Twitter headers</li>
+          </ul>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Template Set Prompt</div>
+            <div class="prompt">"Create a social media template set for [brand]. I need 3 formats: a square post, a story, and a LinkedIn banner. They should all share the same visual identity — same colors, fonts, and design language — but each adapted for its format. Each template should have placeholder text areas so I can swap in different content for different posts."</div>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 29</div>
+          <h4>Master the Sharing Feature</h4>
+          <p>Practice all 3 sharing permission levels in a real collaborative setting:</p>
+          <ul class="checklist">
+            <li><span class="check-icon"></span>Share a design with view-only access — send to a client for feedback</li>
+            <li><span class="check-icon"></span>Share with comment access — have a teammate leave feedback</li>
+            <li><span class="check-icon"></span>Share with edit access — collaborate in real time with someone</li>
+          </ul>
+          <p>Understand when each sharing mode is appropriate. View-only for clients. Comment for reviewers. Edit for collaborators.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="week-divider"></div>
+
+    <!-- WEEK 8 -->
+    <div class="week">
+      <div class="week-header">
+        <div class="week-badge">W8</div>
+        <div class="week-title-block">
+          <h3>Design System Integration</h3>
+          <p>Connect your brand's design system to every project so outputs are always on-brand, automatically</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-label">Core Concept</div>
+        <p>Claude Design can <strong>read your company's codebase and design files</strong> to understand your existing components, architecture, and styling patterns. When you link these, every design Claude generates automatically follows your brand system — the right colors, fonts, spacing, and components — without you needing to specify them each time.</p>
+      </div>
+
+      <div class="tasks-grid">
+
+        <div class="task">
+          <div class="task-num">Task 30</div>
+          <h4>Document Your Own Design System</h4>
+          <p>Before you can integrate a design system, you need to articulate it clearly. Create a "Design System Document" with these sections:</p>
+          <ul class="checklist">
+            <li><span class="check-icon"></span>Color tokens: Primary, secondary, accent, error, success, background, text</li>
+            <li><span class="check-icon"></span>Typography scale: H1, H2, H3, body, caption — with font name and size</li>
+            <li><span class="check-icon"></span>Spacing rules: your base spacing unit and how you multiply it</li>
+            <li><span class="check-icon"></span>Border radius: default radius for buttons, cards, inputs</li>
+            <li><span class="check-icon"></span>Shadow levels: subtle, medium, strong</li>
+            <li><span class="check-icon"></span>Component inventory: list every UI component your brand uses by name</li>
+            <li><span class="check-icon"></span>What to never do: color combos, fonts, patterns that are off-brand</li>
+          </ul>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 31</div>
+          <h4>Build 3 Outputs from the Same Design System</h4>
+          <p>Paste your full design system document at the start of a session, then build 3 completely different outputs — all must stay within the system:</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Design System Session Prompt</div>
+            <div class="prompt">"Here is our complete design system: [paste system]. For every design you create in this session, strictly follow these guidelines. Do not deviate from the colors, fonts, or component styles described. Now: 1) Create a dashboard homepage, 2) Create a mobile settings screen, 3) Create a marketing landing page. All three should feel like they're from the same product family."</div>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 32</div>
+          <h4>The Design System Audit Prompt</h4>
+          <p>After generating any design, use this prompt to have Claude check its own compliance:</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Compliance Check Prompts</div>
+            <ul class="prompt-list">
+              <li>"Review this design against the design system I provided. List every element that breaks the guidelines."</li>
+              <li>"This button is using the wrong color — which component in our system should it use?"</li>
+              <li>"Are the spacing values on this page consistent with our 8px grid system?"</li>
+              <li>"What components from our system are missing that would make this feel more on-brand?"</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 33</div>
+          <h4>Link a GitHub Repository (Team/Enterprise)</h4>
+          <p>If you're on a Team or Enterprise plan and have an existing codebase, practice linking it to a Claude Design project. Claude will read your actual components and produce designs that match your real production code — not just a style reference.</p>
+          <div class="warning">
+            <div class="warning-label">⚠ Known Limitation</div>
+            Linking very large monorepos can cause lag or browser issues. Link specific subdirectories rather than the entire repository root.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="month-recap">
+      <h3>Month 2 — What You'll Have Built</h3>
+      <p style="color: var(--muted); font-size: 14px; margin-bottom: 16px;">By the end of Week 8, these are your concrete deliverables:</p>
+      <div class="deliverables">
+        <div class="deliverable"><span class="del-dot" style="background:var(--month2)"></span>2 complete pitch deck variations</div>
+        <div class="deliverable"><span class="del-dot" style="background:var(--month2)"></span>1 interactive mobile prototype</div>
+        <div class="deliverable"><span class="del-dot" style="background:var(--month2)"></span>1 Instagram carousel (5 slides)</div>
+        <div class="deliverable"><span class="del-dot" style="background:var(--month2)"></span>1 complete one-pager (PDF exported)</div>
+        <div class="deliverable"><span class="del-dot" style="background:var(--month2)"></span>Full social media template set</div>
+        <div class="deliverable"><span class="del-dot" style="background:var(--month2)"></span>Design System Document v1</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════ MONTH 3 ══════════════ -->
+  <div class="month3">
+    <div class="month-header">
+      <span class="month-num">03</span>
+      <div class="month-info">
+        <h2>Month 3 — Mastery, Speed & Your Signature System</h2>
+        <p>Weeks 9 through 12 · Build at professional speed, work with clients, and create your own repeatable design system</p>
+      </div>
+    </div>
+
+    <div class="month-goal">
+      <strong>Monthly Goal:</strong> By the end of Month 3, Claude Design is not a tool you use occasionally — it's the centerpiece of your design workflow. You have a complete system (prompt library, design system, client SOP) that lets you deliver professional design work faster than any traditional process. And you have a portfolio piece that demonstrates mastery.
+    </div>
+
+    <!-- WEEK 9 -->
+    <div class="week">
+      <div class="week-header">
+        <div class="week-badge">W9</div>
+        <div class="week-title-block">
+          <h3>Client-Ready Workflows</h3>
+          <p>Build complete, polished deliverables for real clients or real projects — from brief to export in one session</p>
+        </div>
+      </div>
+
+      <div class="tasks-grid">
+
+        <div class="task">
+          <div class="task-num">Task 34</div>
+          <h4>Build a Reusable Client Briefing Prompt Template</h4>
+          <p>Create a master template you use at the start of every new client project. It should pull in everything Claude needs to deliver on-brand work from the first draft. Here's the structure:</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Client Briefing Template Structure</div>
+            <div class="prompt">"Client: [name]
+Industry: [industry]
+Target audience: [description]
+Brand colors: [hex codes]
+Typography: [font names]
+Tone of voice: [description]
+Competitor designs to NOT look like: [names]
+3 brands whose aesthetic we admire: [names]
+Project: [what we're building]
+Key message: [one sentence]
+Most important section: [name it]
+Deliverable format: [PDF / PPTX / HTML / Canva]
+Deadline: [date]"</div>
+          </div>
+          <p>Save this as your master template. Fill it in before every new client project. Paste it as your first message in every new Claude Design session.</p>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 35</div>
+          <h4>Build a Complete Client Deliverable — Start to Finish</h4>
+          <p>Choose a real project (or simulate one with a fictional client). Build the full deliverable in one Claude Design session — from first prompt to final export — using your briefing template. Time it. The goal is a polished, client-ready output in a single 60–90 minute working session.</p>
+          <ul class="checklist">
+            <li><span class="check-icon"></span>Start with the client briefing template</li>
+            <li><span class="check-icon"></span>Generate the first draft with a fully structured prompt</li>
+            <li><span class="check-icon"></span>Do a design review (ask Claude to audit the design)</li>
+            <li><span class="check-icon"></span>Iterate until it's client-ready</li>
+            <li><span class="check-icon"></span>Export in the appropriate format</li>
+            <li><span class="check-icon"></span>Write a design rationale document (next task)</li>
+          </ul>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 36</div>
+          <h4>Generate a Design Rationale Document</h4>
+          <p>After finishing any client project, ask Claude to write the rationale for you:</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Rationale Prompts</div>
+            <ul class="prompt-list">
+              <li>"Explain every significant design decision you made in this project and why."</li>
+              <li>"Write a design rationale document I can send to the client explaining why the design looks the way it does."</li>
+              <li>"Why did you choose this color palette for this audience? Give me a client-friendly explanation."</li>
+              <li>"What accessibility decisions were made in this design and why do they matter?"</li>
+            </ul>
+          </div>
+          <p>This document becomes part of every client deliverable — it positions you as a thoughtful designer, not just someone using a tool.</p>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 37</div>
+          <h4>The Full Pipeline: Claude Design → Canva → Client</h4>
+          <p>Master the end-to-end workflow for a real client project:</p>
+          <ul class="checklist">
+            <li><span class="check-icon"></span>Build in Claude Design (structure, layout, first iteration)</li>
+            <li><span class="check-icon"></span>Export to Canva (for final polish, real photos, team editing)</li>
+            <li><span class="check-icon"></span>Finalize in Canva (typography fine-tuning, real images)</li>
+            <li><span class="check-icon"></span>Share Canva link OR export as PDF to deliver to client</li>
+            <li><span class="check-icon"></span>Track total time from brief to delivery</li>
+          </ul>
+          <p>Your target: cut your normal design delivery time in half. Track how close you get.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="week-divider"></div>
+
+    <!-- WEEK 10 -->
+    <div class="week">
+      <div class="week-header">
+        <div class="week-badge">W10</div>
+        <div class="week-title-block">
+          <h3>Speed Challenges & Prompt Mastery</h3>
+          <p>Train yourself to work at professional speed through timed challenges and prompt optimization</p>
+        </div>
+      </div>
+
+      <div class="tasks-grid">
+
+        <div class="task">
+          <div class="task-num">Task 38</div>
+          <h4>The 10-Minute One-Pager Challenge</h4>
+          <p>Set a timer for 10 minutes. Open Claude Design. Your goal: a complete, exportable one-pager before the timer ends. Use your best prompt structure, your context file, and your fastest iteration technique. Run this challenge 5 times across the week. Track your time and quality for each run. By Friday, you should consistently produce a high-quality one-pager in 10 minutes or less.</p>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 39</div>
+          <h4>The Vague vs. Specific Prompt Comparison</h4>
+          <p>Build the same design twice — once with a vague prompt, once with a highly specific one:</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Vague Prompt (run first)</div>
+            <div class="prompt">"Design a landing page for a SaaS product."</div>
+          </div>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Specific Prompt (run second)</div>
+            <div class="prompt">"Design a landing page for a B2B SaaS project management tool targeting 50-person startup teams. Hero section: headline 'Ship Projects 40% Faster', sub-headline focused on reducing meetings, a demo request form with email field and CTA button. Features section: 3 columns showing AI task assignment, real-time dashboards, and Slack integration. Social proof: 5 logos of recognizable tech companies. Pricing: 3 tiers (Starter, Growth, Enterprise). Footer with nav links. Dark navy background, white text, bright green CTAs."</div>
+          </div>
+          <p>Screenshot both outputs side-by-side. The quality gap is your lesson.</p>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 40</div>
+          <h4>The Rebuild Challenge</h4>
+          <p>Find a real website you use every day — a tool, a startup, a product you love. Try to recreate its homepage in Claude Design using only prompts. No uploading the actual screenshot — only describe what you see in text. See how close you can get in 30 minutes. This forces you to develop the vocabulary to describe design precisely.</p>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 41</div>
+          <h4>Identify & Eliminate Your 3 Slowest Moments</h4>
+          <p>Look back at your Prompt Journal. Identify the 3 types of prompts or moments in your workflow that consistently produce weak first drafts or require the most iterations. For each one, develop a better prompt template. Test your improved templates and track whether iteration count drops. This is how you optimize your personal workflow.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="week-divider"></div>
+
+    <!-- WEEK 11 -->
+    <div class="week">
+      <div class="week-header">
+        <div class="week-badge">W11</div>
+        <div class="week-title-block">
+          <h3>Collaboration, Feedback & Team Workflows</h3>
+          <p>Use Claude Design as a team tool — real-time collaboration, shared design systems, and design reviews</p>
+        </div>
+      </div>
+
+      <div class="tasks-grid">
+
+        <div class="task">
+          <div class="task-num">Task 42</div>
+          <h4>Real-Time Collaborative Editing Session</h4>
+          <p>Invite a teammate or friend to a design project with edit access. Have them chat with Claude in the same project simultaneously. Notice how Claude handles multiple voices. After the session, discuss: what worked, what caused confusion, how would you structure collaboration in a real team? Write a short "collaboration protocol" for your team based on what you learn.</p>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 43</div>
+          <h4>Use Claude as a Design Critic — Go Deep</h4>
+          <p>Take your best design from the past 3 months. Run all of these critique prompts on it. Apply every piece of feedback Claude gives. This is a masterclass in design thinking:</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Advanced Critique Prompts</div>
+            <ul class="prompt-list">
+              <li>"What are the 5 biggest design problems with this? Be direct and specific."</li>
+              <li>"Review the visual hierarchy. What does the user's eye do when they land on this page?"</li>
+              <li>"Is this design accessible? Check contrast ratios, touch target sizes, and text legibility."</li>
+              <li>"Argue against every major design decision I've made here. What would a critic say?"</li>
+              <li>"Compare this design to industry best practices for [this type of page]. Where does it fall short?"</li>
+              <li>"If a new user lands on this for the first time, what are they confused by?"</li>
+              <li>"What would make this convert better? Give me 5 specific CRO (conversion rate optimization) suggestions."</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 44</div>
+          <h4>Build the Team Prompt Library</h4>
+          <p>Compile a shared "Claude Design Prompt Library" for your team. Organize your best prompts across all 11 weeks into categories. This becomes the team's shared competitive advantage.</p>
+          <ul class="checklist">
+            <li><span class="check-icon"></span>Landing pages (5+ prompts)</li>
+            <li><span class="check-icon"></span>Pitch decks & presentations (5+ prompts)</li>
+            <li><span class="check-icon"></span>Social media & carousels (5+ prompts)</li>
+            <li><span class="check-icon"></span>Dashboards & internal tools (5+ prompts)</li>
+            <li><span class="check-icon"></span>Prototypes & interactive flows (5+ prompts)</li>
+            <li><span class="check-icon"></span>Design review & critique prompts (5+ prompts)</li>
+            <li><span class="check-icon"></span>Your personal top 10 all-time best prompts</li>
+          </ul>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 45</div>
+          <h4>Link a Codebase to Your Design Project</h4>
+          <p>If you have an existing GitHub repository, link it to a Claude Design project. Ask Claude to build a new UI page that matches your existing components and architecture. Then compare the output to something built without the codebase context. This is the feature that makes prototypes production-ready from the start.</p>
+          <div class="tip">
+            <div class="tip-label">💡 Best Practice</div>
+            Link a specific subdirectory (like /components or /src/ui) rather than the root of a large repository to avoid browser performance issues.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="week-divider"></div>
+
+    <!-- WEEK 12 -->
+    <div class="week">
+      <div class="week-header">
+        <div class="week-badge">W12</div>
+        <div class="week-title-block">
+          <h3>Build Your Signature System & Capstone Project</h3>
+          <p>Consolidate everything into a permanent, repeatable personal design system and build your portfolio capstone</p>
+        </div>
+      </div>
+
+      <div class="tasks-grid">
+
+        <div class="task">
+          <div class="task-num">Task 46</div>
+          <h4>Finalize Your Personal Design System</h4>
+          <p>Combine everything you've learned into a permanent, production-ready Design System Document. This is the file you use for every project going forward. It should be polished enough to share with a client or team member.</p>
+          <ul class="checklist">
+            <li><span class="check-icon"></span>Brand colors with hex codes and usage rules</li>
+            <li><span class="check-icon"></span>Typography scale with font names, sizes, and weights</li>
+            <li><span class="check-icon"></span>Component inventory with naming conventions</li>
+            <li><span class="check-icon"></span>Spacing and grid system</li>
+            <li><span class="check-icon"></span>Tone of voice guide (3 dos, 3 don'ts)</li>
+            <li><span class="check-icon"></span>Visual don'ts — patterns, colors, styles to never use</li>
+            <li><span class="check-icon"></span>3 reference brands with why you reference them</li>
+            <li><span class="check-icon"></span>Export format preference guide (when to use each format)</li>
+          </ul>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 47</div>
+          <h4>Write Your Personal Claude Design SOP</h4>
+          <p>A Standard Operating Procedure is how you guarantee the same quality on every project. Write yours. It should cover every step from receiving a brief to delivering a final file. Include your exact prompts for each stage. This is the document that lets you onboard a team member on your workflow in 30 minutes.</p>
+          <div class="prompt-block">
+            <div class="prompt-label">SOP Template Structure</div>
+            <ul class="prompt-list">
+              <li>Step 1: Receive brief → fill in client briefing template</li>
+              <li>Step 2: Open new Claude Design project → paste brand context + brief</li>
+              <li>Step 3: Generate first draft using 4-part prompt formula</li>
+              <li>Step 4: Run design review prompts → fix all flagged issues</li>
+              <li>Step 5: Iterate (target: under 20 iterations to final state)</li>
+              <li>Step 6: Save final version → export in correct format</li>
+              <li>Step 7: Send to Canva if final polish needed</li>
+              <li>Step 8: Generate design rationale document</li>
+              <li>Step 9: Deliver to client with rationale doc</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-num">Task 48 — FINAL CAPSTONE</div>
+          <h4>Build Your Portfolio Masterpiece</h4>
+          <p>This is your Month 3 — and 3-month — final project. Build one complete, portfolio-worthy design project that demonstrates everything you've learned. It should show: multi-screen thinking, design system consistency, iterative refinement, interactive elements, and professional-grade visual quality.</p>
+          <div class="prompt-block">
+            <div class="prompt-label">🟢 Capstone Project Options (pick one)</div>
+            <ul class="prompt-list">
+              <li>A complete product UI: landing page + dashboard + mobile app (3 screens)</li>
+              <li>A full brand launch kit: logo (described), landing page, social templates, pitch deck</li>
+              <li>A client project you've actually been paid to do — built entirely in Claude Design</li>
+              <li>A redesign of a real product you use — with before/after comparison</li>
+            </ul>
+          </div>
+          <ul class="checklist">
+            <li><span class="check-icon"></span>Uses your complete brand context file</li>
+            <li><span class="check-icon"></span>3+ separate design outputs that share one visual identity</li>
+            <li><span class="check-icon"></span>Exported in at least 2 formats</li>
+            <li><span class="check-icon"></span>Includes a design rationale document</li>
+            <li><span class="check-icon"></span>Shared with 3+ people for feedback, then iterated</li>
+            <li><span class="check-icon"></span>Claude Code handoff prepared (even if not built)</li>
+            <li><span class="check-icon"></span>Screenshot or record a walkthrough to share on Instagram</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="month-recap">
+      <h3>Month 3 — What You'll Have Built</h3>
+      <p style="color: var(--muted); font-size: 14px; margin-bottom: 16px;">By the end of Week 12, these are your concrete deliverables:</p>
+      <div class="deliverables">
+        <div class="deliverable"><span class="del-dot" style="background:var(--month3)"></span>Client Briefing Prompt Template</div>
+        <div class="deliverable"><span class="del-dot" style="background:var(--month3)"></span>Personal Design System (final)</div>
+        <div class="deliverable"><span class="del-dot" style="background:var(--month3)"></span>Team Prompt Library (50+ prompts)</div>
+        <div class="deliverable"><span class="del-dot" style="background:var(--month3)"></span>Personal Claude Design SOP</div>
+        <div class="deliverable"><span class="del-dot" style="background:var(--month3)"></span>Speed-tested workflows (10-min targets)</div>
+        <div class="deliverable"><span class="del-dot" style="background:var(--month3)"></span>Portfolio Capstone Project</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FINALE -->
+<section class="finale">
+  <h2>You're Now a Claude Design Master</h2>
+  <p>After 12 weeks, 48+ tasks, and 100+ prompts, you don't just know how to use Claude Design — you have a complete operating system built around it. A prompt library. A design system. An SOP. A portfolio. And a workflow that beats traditional design pipelines every time.</p>
+  <div class="finale-stats">
+    <div class="finale-stat">
+      <div class="num">12</div>
+      <div class="lbl">Weeks of Work</div>
+    </div>
+    <div class="finale-stat">
+      <div class="num">48+</div>
+      <div class="lbl">Hands-On Tasks</div>
+    </div>
+    <div class="finale-stat">
+      <div class="num">100+</div>
+      <div class="lbl">Prompts Practiced</div>
+    </div>
+    <div class="finale-stat">
+      <div class="num">6</div>
+      <div class="lbl">Export Formats Mastered</div>
+    </div>
+  </div>
+  <a class="cta-url" href="https://claude.ai/design">Start Today → claude.ai/design</a>
+</section>
+
+</body>
+</html>
